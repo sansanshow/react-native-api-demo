@@ -27,6 +27,7 @@ class AppMain extends Component {
         return (
           <TabNavigator>
 			  <TabNavigator.Item
+			  	badgeText="1"	
 			  	title="主页"
 			    selected={this.state.selectedTab === 'home'}
 			    selectedTitleStyle={styles.selectedTextStyle}
@@ -38,12 +39,12 @@ class AppMain extends Component {
 			  </TabNavigator.Item>
 			  <TabNavigator.Item
 			  	title="聊天"
-			    selected={this.state.selectedTab === 'order'}
+			    selected={this.state.selectedTab === 'publish'}
 			    selectedTitleStyle={styles.selectedTextStyle}
 			    titleStyle={styles.textStyle}
 			    renderIcon={() => <Image source={require("../images/publish.png")} style={styles.iconStyle}/>}
 			    renderSelectedIcon={() => <Image source={require("../images/publish-fill.png")} style={styles.iconStyle}/>}
-			    onPress={() => this.setState({ selectedTab: 'order' })}>
+			    onPress={() => this.setState({ selectedTab: 'publish' })}>
 			    <Profile {...this.props}/>
 			  </TabNavigator.Item>
 			  <TabNavigator.Item
@@ -61,15 +62,19 @@ class AppMain extends Component {
     }
 }
 const styles=StyleSheet.create({
-   iconStyle:{
-       width:26,
-       height:26,
-   },
-   textStyle:{
-       color:'#999',
-   },
-   selectedTextStyle:{
-       color:'black',
-   }
+	item:{
+		backgroundColor: '#ccc',
+	},
+	iconStyle:{
+		width:26,
+		height:26,
+	},
+	textStyle:{
+		color:'#999',
+		
+	},
+	selectedTextStyle:{
+		color:'black',
+	}
 });
 export default AppMain;

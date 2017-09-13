@@ -23,7 +23,7 @@ const resetAction = NavigationActions.reset({
     NavigationActions.navigate({ routeName: 'Chat'})
   ]
 });
-export default class HomeScreen extends Component {
+export default class Home extends Component {
     constructor(){
         super();
         // 默认选中
@@ -34,32 +34,32 @@ export default class HomeScreen extends Component {
     static navigationOptions = {
         // title: '首页',
         header: null,
-        tabBarLabel: '首页',
-        // Note: By default the icon is only shown on iOS. Search the showIcon option below.
-        tabBarIcon: ({ tintColor }) => (
-        <Image
-            source={require('./images/home.png')}
-            style={[styles.icon, {tintColor: tintColor}]}
-        />
-        ),
+        // tabBarLabel: '首页',
+        // // Note: By default the icon is only shown on iOS. Search the showIcon option below.
+        // tabBarIcon: ({ tintColor }) => (
+        // <Image
+        //     source={require('../images/home.png')}
+        //     style={[styles.icon, {tintColor: tintColor}]}
+        // />
+        // ),
     }
     
     render() {
-        const { navigate } = this.props.navigation;
+        // const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
                 <Text>Hello, Navigation!</Text>
-                <Button
+                {/*<Button
                     onPress={() => navigate('Chat',{user: 'Lucy'})}
                     title="Chat with Lucy"/>
                 <Text>Go Third</Text>
                 <Button
                     onPress={() => navigate('Third',{title: 'Third'})}
                     title="Third"/>
-                <Text>Go Settings</Text>
+                <Text>Go Profile</Text>
                 <Button
-                    onPress={() => navigate('Settings')}
-                    title="Settings"/>
+                    onPress={() => navigate('Profile')}
+                    title="Profile"/>
                 <Text>NavigationActions--dispatch</Text>
                 <Button
                     onPress={() => this.props.navigation.dispatch(navigateAction)}
@@ -67,7 +67,7 @@ export default class HomeScreen extends Component {
                 <Text>NavigationActions--reset</Text>
                 <Button
                     onPress={() => this.props.navigation.dispatch(resetAction)}
-                    title="ResetAction"/>
+                    title="ResetAction"/>*/}
             </View>
             );
     }

@@ -5,15 +5,15 @@ import {
   Button
 } from 'react-native';
 import { StackNavigator, NavigationActions } from 'react-navigation';
-export default class ProfileScreen extends Component {
+export default class Profile extends Component {
     static navigationOptions = {
         title: 'Welcome',
     };
     render() {
-        const { navigate } = this.props.navigation;
+        // const { navigate } = this.props.navigation;
         return (
             <View>
-                <Text>Hello, ProfileScreen!</Text>
+                <Text>Hello, Profile Screen!</Text>
             </View>
         );
     }

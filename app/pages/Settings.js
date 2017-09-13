@@ -11,7 +11,7 @@ export default class Settings extends Component {
         header: null,
     };
     render() {
-        const { navigate } = this.props.navigation;
+        // const { navigate } = this.props.navigation;
         return (
             <View>
                 <Text>Hello, Settings!</Text>

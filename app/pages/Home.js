@@ -4,6 +4,7 @@ import {
     Text,
     Image,
     Button,
+    TouchableOpacity,
     View
 } from 'react-native';
 import { StackNavigator, NavigationActions, TabNavigator } from 'react-navigation';
@@ -43,12 +44,19 @@ export default class Home extends Component {
         // />
         // ),
     }
+    onPressItem(){
+        const {navigate} = this.props.navigation;
+        InteractionManager.runAfterInteractions(() => navigate('Third',{title: 'Third>>>'}));
+    }
     
     render() {
-        // const { navigate } = this.props.navigation;
+        const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
-                <Text>Hello, Navigation!</Text>
+                <Text onPress={()=> navigate('Third',{title: 'Third1111'})}>Hello, Navigation!</Text>
+                <TouchableOpacity onPress={()=>{this.onPressItem}}>
+                    <View style={styles.item}><Text>列表111</Text></View>
+                </TouchableOpacity>
                 {/*<Button
                     onPress={() => navigate('Chat',{user: 'Lucy'})}
                     title="Chat with Lucy"/>
@@ -80,5 +88,7 @@ const styles = StyleSheet.create({
         width: 26,
         height: 26,
     },
-  
+    item: {
+        height: 30,
+    }
 });

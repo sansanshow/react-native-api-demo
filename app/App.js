@@ -62,7 +62,7 @@ class App extends React.Component {
         />
       </View>
     );
-  } 
+  }
 }
 let styles = StyleSheet.create({
   navigator: {

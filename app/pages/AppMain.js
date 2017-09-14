@@ -10,6 +10,7 @@ import {
   Image,
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator'; 
+import { StackNavigator, NavigationActions } from 'react-navigation';
 
 import Home from './Home';
 import Settings from './Settings';
@@ -23,6 +24,9 @@ class AppMain extends Component {
 	  	      selectedTab:'home'
 	      };
     }
+		static navigationOptions = {
+        header: null,
+		}
     render() {
         return (
           <TabNavigator>
@@ -35,7 +39,7 @@ class AppMain extends Component {
 			    renderIcon={() => <Image source={require("../images/home.png")} style={styles.iconStyle}/>}
 			    renderSelectedIcon={() => <Image source={require("../images/home-fill.png")} style={styles.iconStyle}/>}
 			    onPress={() => this.setState({ selectedTab: 'home' })}>
-			    <Home {...this.props}/>
+			    <Home {...this.props} navigation={this.props.navigation}/>
 			  </TabNavigator.Item>
 			  <TabNavigator.Item
 			  	title="聊天"
@@ -45,7 +49,7 @@ class AppMain extends Component {
 			    renderIcon={() => <Image source={require("../images/publish.png")} style={styles.iconStyle}/>}
 			    renderSelectedIcon={() => <Image source={require("../images/publish-fill.png")} style={styles.iconStyle}/>}
 			    onPress={() => this.setState({ selectedTab: 'publish' })}>
-			    <Profile {...this.props}/>
+			    <Profile {...this.props} navigation={this.props.navigation}/>
 			  </TabNavigator.Item>
 			  <TabNavigator.Item
 			  	title="我的"
@@ -55,7 +59,7 @@ class AppMain extends Component {
 			    renderIcon={() => <Image source={require("../images/people.png")} style={styles.iconStyle}/>}
 			    renderSelectedIcon={() => <Image source={require("../images/people-fill.png")} style={styles.iconStyle}/>}
 			    onPress={() => this.setState({ selectedTab: 'center' })}>
-			    <Settings {...this.props}/>
+			    <Settings {...this.props} navigation={this.props.navigation}/>
 			  </TabNavigator.Item>
 			</TabNavigator>
         );

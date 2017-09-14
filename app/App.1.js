@@ -12,7 +12,7 @@ import ProfileScreen from './pages/ProfileScreen';
 const MainScreenNavigator = TabNavigator({
     Main: { screen: HomeScreen },
     Mine: { screen: Settings },
-}, 
+},
 {
     tabBarPosition: 'bottom',
     animationEnabled: true,
@@ -33,16 +33,16 @@ const MainScreenNavigator = TabNavigator({
 })
 const SimpleApp = StackNavigator({
     Home: { screen: MainScreenNavigator },
-    Chat: { screen: ChatScreen }, 
-    Third: { screen: ThirdScreen }, 
-    // Settings: { screen: Settings }, 
-    Profile: { 
+    Chat: { screen: ChatScreen },
+    Third: { screen: ThirdScreen },
+    // Settings: { screen: Settings },
+    Profile: {
         screen: ProfileScreen,
         path:'app/profile', //使用url导航时用到, 如 web app 和 Deep Linking
         navigationOptions:{ // // 此处设置了, 会覆盖组件内的`static navigationOptions`设置
             title: 'ModifyProfile'
-        } 
-    }, 
+        }
+    },
 }
     // , {
     // initialRouteName: 'Home', // 默认显示界面
@@ -59,7 +59,7 @@ const SimpleApp = StackNavigator({
     //     cardStack: {
     //         gesturesEnabled: true
     //     }
-    // }, 
+    // },
 //     mode: 'card',  // 页面切换模式, 左右是card(相当于iOS中的push效果), 上下是modal(相当于iOS中的modal效果)
 //     headerMode: 'screen', // 导航栏的显示模式, screen: 有渐变透明效果, float: 无透明效果, none: 隐藏导航栏
 //     onTransitionStart: ()=>{ console.log('导航栏切换开始'); },  // 回调
